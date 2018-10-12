@@ -74,8 +74,42 @@ class MySelf extends StatelessWidget {
       ),
     );
 
+    //拖动块
+    Widget background = new Container(
+        color: Colors.red,
+        height: 200.0,
+        child: new Column(
+          children: <Widget>[
+            new Center(
+              child: new Material(
+                child: new ClipOval(
+                  child: new Image.asset(
+                    'images/person.png',
+                    width: 80.0,
+                    height: 80.0,
+                  ),
+                ),
+                elevation: 40.0,
+                color: Color.fromRGBO(255, 255, 255, 0.4),
+              ),
+            ),
+          ],
+        ));
+
     Widget textSection = new Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(32.0),
+      decoration: new BoxDecoration(
+        border: new Border.all(
+          color: Colors.red,
+        ),
+        borderRadius: const BorderRadius.only(
+          topLeft: const Radius.circular(10.0),
+          bottomLeft: const Radius.circular(10.0),
+          topRight: const Radius.circular(10.0),
+          bottomRight: const Radius.circular(10.0),
+        ),
+      ),
       child: new Text(
         '''
 Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578
@@ -88,6 +122,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
     return new Scaffold(
       body: new ListView(
         children: <Widget>[
+          background,
           titleSection,
           buttonSection,
           textSection,

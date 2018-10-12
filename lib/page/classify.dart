@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Classify extends StatelessWidget{
-  Classify({Key key, this.title}) : super(key: key);
+//  Classify({Key key, this.title}) : super(key: key);
   final String title;
+  Classify({this.title});
 
   @override
   Widget build(BuildContext context) {
